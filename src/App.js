@@ -8,7 +8,7 @@ import { nanoid } from 'nanoid';
 
 class App extends Component {
   state = {
-    todos: initialTodos,
+    todos: [],
     filter: '',
   };
 
@@ -49,7 +49,30 @@ class App extends Component {
     return this.state.todos.filter(todo => todo.text.toLowerCase().includes(normalizedFilter));
   };
 
+  componentDidMount() {
+    console.log('App componentDidMount');
+
+    const todos = localStorage.getItem('todos');
+    // console.log(todos);
+    const parsedTodos = JSON.parse(todos);
+    // console.log(parsedTodos);
+    if (parsedTodos) {
+      this.setState({ todos: parsedTodos });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('App componentDidUpdate');
+
+    if (this.state.todos !== prevState.todos) {
+      console.log('Оновилося поле todos, записую todos в сховище!');
+
+      localStorage.setItem('todos', JSON.stringify(this.state.todos));
+    }
+  }
+
   render() {
+    console.log('App render');
     const { todos, filter } = this.state;
 
     const totalTodos = todos.length;
