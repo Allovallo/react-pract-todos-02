@@ -5,6 +5,9 @@ import initialTodos from '../src/todos.json';
 import TodoEditor from './components/TodoEditor/TodoEditor';
 import Filter from 'components/TodoFilter/TodoFilter';
 import Modal from 'components/Modal/Modal';
+import Tabs from 'components/Tabs/Tabs';
+import Clock from 'components/Clock/Clock';
+
 import { nanoid } from 'nanoid';
 
 class App extends Component {
@@ -90,6 +93,10 @@ class App extends Component {
 
     return (
       <div>
+        <Clock />
+
+        <Tabs></Tabs>
+
         <button type="button" onClick={this.toggleModal}>
           Відкрити Модалку!
         </button>
