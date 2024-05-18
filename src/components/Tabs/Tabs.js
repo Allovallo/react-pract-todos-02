@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-export default class Tabs extends Component {
+export default class Tabs extends PureComponent {
   state = {
     activeTabIdx: 0,
   };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return nextState.activeTabIdx !== this.state.activeTabIdx;
-  }
+  //   shouldComponentUpdate(nextProps, nextState) {
+  //     return nextState.activeTabIdx !== this.state.activeTabIdx;
+  //   }
 
   setActiveTabIdx = idx => {
     this.setState({ activeTabIdx: idx });
