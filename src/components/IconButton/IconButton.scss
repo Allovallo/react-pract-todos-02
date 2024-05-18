@@ -1,13 +1,13 @@
-@import 'styles/colors';
+// @import 'styles/colors';
 
 .IconButton {
   margin: 0;
   padding: 10px;
   border: none;
   border-radius: 50%;
-  color: $white;
+  color: white;
   font: inherit;
-  background-color: $green;
+  background-color: green;
   cursor: pointer;
 
   display: inline-flex;

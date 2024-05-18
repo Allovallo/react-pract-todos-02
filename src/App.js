@@ -7,7 +7,9 @@ import Filter from 'components/TodoFilter/TodoFilter';
 import Modal from 'components/Modal/Modal';
 import Tabs from 'components/Tabs/Tabs';
 import Clock from 'components/Clock/Clock';
+import IconButton from 'components/IconButton/IconButton';
 import tabs from '../src/tabs.json';
+import { ReactComponent as AddIcon } from './icons/add.svg';
 
 import { nanoid } from 'nanoid';
 
@@ -98,9 +100,13 @@ class App extends Component {
 
         <Tabs items={tabs} />
 
-        <button type="button" onClick={this.toggleModal}>
+        <IconButton onClick={this.toggleModal}>
+          <AddIcon width="40" height="40"></AddIcon>
+        </IconButton>
+
+        {/* <button type="button" onClick={this.toggleModal}>
           Відкрити Модалку!
-        </button>
+        </button> */}
         <h1>Стан компонента</h1>
 
         {showModal && (
