@@ -7,6 +7,7 @@ import Filter from 'components/TodoFilter/TodoFilter';
 import Modal from 'components/Modal/Modal';
 import Tabs from 'components/Tabs/Tabs';
 import Clock from 'components/Clock/Clock';
+import tabs from '../src/tabs.json';
 
 import { nanoid } from 'nanoid';
 
@@ -95,7 +96,7 @@ class App extends Component {
       <div>
         <Clock />
 
-        <Tabs></Tabs>
+        <Tabs items={tabs} />
 
         <button type="button" onClick={this.toggleModal}>
           Відкрити Модалку!
